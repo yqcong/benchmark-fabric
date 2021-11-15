@@ -209,7 +209,7 @@ function main() {
   console.log('starting benchmark...');
   var timer = new NanoTimer();
 
-  if args.bmark == 'smallbank' {
+  if (args.bmark == 'smallbank') {
     timer.setInterval(fire_smallbank, '', args.gap);
   } else {
     timer.setInterval(fire_readwrite, '', args.gap);
