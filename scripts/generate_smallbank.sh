@@ -72,7 +72,7 @@ do
           #start the benchmark
           for i  in `seq 1 4`;
           do
-            user="u{i}`openssl rand -hex 2`"
+            user="u${i}`openssl rand -hex 2`"
             node src/benchmark.js --zipfs=${s} --bmark=smallbank --transact=${writePer} --deposit=${writePer} --payment=${writePer} --check=${writePer} --amalgamate=${writePer} --query=${readPer} --caname=ca.org1.example.com --user=${user} --caaddr=ca.org1.example.com --caport=7054 --mspid=Org1MSP --channelName=${CHANNEL_PREFIX} --naccounts=${NACCOUNTS} --paddr=peer0.org1.example.com --pport=7051 --oaddr=orderer.example.com --oport=7050 --gap=3m --duration=90s &
           done
 
